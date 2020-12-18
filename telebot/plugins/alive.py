@@ -72,7 +72,7 @@ async def amireallyalive(alive):
         tele += (
             f"{telemoji} **Telethon version**: `1.17`\n{telemoji} **Python**: `3.8.3`\n"
         )
-        tele += f"{telemoji} **TeleBot Version**: `{telever}`\n"
+        tele += f"{telemoji} **Bot Version**: `{telever}`\n"
         tele += f"{telemoji} **More Info**: @TeleBotSupport\n"
         tele += f"{telemoji} **Sudo** : `{sudo}`\n"
         tele += f"{telemoji} **TeleBot Uptime**: `{uptime}`\n"
