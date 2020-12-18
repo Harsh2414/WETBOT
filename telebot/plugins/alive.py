@@ -15,7 +15,7 @@ from telebot.telebotConfig import Config, Var
 CUSTOM_ALIVE = (
     Var.CUSTOM_ALIVE
     if Var.CUSTOM_ALIVE
-    else "Hey! I'm alive. All systems online and functioning normally!"
+    else "Hey! I'm alive.!"
 )
 ALV_PIC = Var.ALIVE_PIC if Var.ALIVE_PIC else None
 telemoji = Var.CUSTOM_ALIVE_EMOJI if Var.CUSTOM_ALIVE_EMOJI else "**✵**"
@@ -67,7 +67,7 @@ async def amireallyalive(alive):
     (end - start).microseconds / 1000
     uptime = get_readable_time((time.time() - StartTime))
     if ALV_PIC:
-        tele = f"**Welcome To TeleBot **\n\n"
+        tele = f"**Welcome To Wetbot **\n\n"
         tele += f"`{CUSTOM_ALIVE}`\n\n"
         tele += (
             f"{telemoji} **Telethon version**: `1.17`\n{telemoji} **Python**: `3.8.3`\n"
@@ -100,14 +100,14 @@ async def amireallyalive(alive):
             alive.chat_id,
             f"**Welcome To TeleBot **\n\n"
             f"`{CUSTOM_ALIVE}`\n\n"
-            f"{telemoji} **Telethon version**: `1.17`\n{telemoji} **Python**: `3.8.3`\n"
+            f"{telemoji} **Telethon version**: `999.99`\n{telemoji} **Python**: `3.8.3`\n"
             f"{telemoji} **TeleBot Version**: `{telever}`\n"
             f"{telemoji} **More Info**: @TeleBotSupport\n"
             f"{telemoji} **Sudo** : `{sudo}`\n"
             f"{telemoji} **TeleBot Uptime**: `{uptime}`\n"
             f"{telemoji} **Database Status**: `All OK 👌!`\n"
             f"{telemoji} **My pro owner** : [{DEFAULTUSER}](tg://user?id={myid})\n\n"
-            "    [✨ GitHub Repository ✨](https://github.com/xditya/TeleBot)",
+            "    [✨ GitHub Repository ✨](https://github.com/harsh2414/wetbot)",
             link_preview=False,
         )
         await borg.send_file(alive.chat_id, file=sticker)
