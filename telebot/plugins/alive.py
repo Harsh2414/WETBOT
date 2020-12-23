@@ -110,7 +110,6 @@ async def amireallyalive(alive):
             "    [✨ GitHub Repository ✨](https://github.com/harsh2414/wetbot)",
             link_preview=False,
         )
-        await borg.send_file(alive.chat_id, file=sticker)
         await alive.delete()
 
 
