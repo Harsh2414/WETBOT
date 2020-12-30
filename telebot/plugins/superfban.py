@@ -25,7 +25,7 @@ from telebot import CMD_HELP
 async def _(event):
     if event.fwd_from:
         return
-    await event.edit("STARTED A MASS-FBAN APPEAL.. \nPLEASE DO NOT SEND MUCH MESSEGES TO AVOID FLOODWAIT")
+    await event.edit("STARTED A MASS-FBAN.. \nPLEASE DO NOT SEND MUCH MESSEGES TO AVOID FLOODWAIT😎")
     fedList = []
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
@@ -87,11 +87,11 @@ async def _(event):
                 await bot_conv.send_message("/myfeds")
                 await asyncio.sleep(6)
                 response = await bot_conv.get_response()
-                await asyncio.sleep(6)
+                await asyncio.sleep(8)
                 if "make a file" in response.text:
-                    await asyncio.sleep(6)
+                    await asyncio.sleep(8)
                     await response.click(0)
-                    await asyncio.sleep(6)
+                    await asyncio.sleep(8)
                     fedfile = await bot_conv.get_response()
                     await asyncio.sleep(6)
                     if fedfile.media:
@@ -151,9 +151,9 @@ async def _(event):
             exCount += 1
             continue
         await telebot.send_message(chat, f"/joinfed {fed}")
-        await asyncio.sleep(5)
+        await asyncio.sleep(8)
         await telebot.send_message(chat, f"/fban {FBAN} {REASON}")
-        await asyncio.sleep(5)
+        await asyncio.sleep(8)
     await event.edit(
         f"SuperFBan Completed. Affected {len(fedList) - exCount} feds.\n#TB"
     )
