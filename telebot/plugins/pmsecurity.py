@@ -260,11 +260,7 @@ async def do_pm_permit_action(chat_id, event):
 # Do not touch the below codes!
 
 
-@telebot.on(
-    events.NewMessage(
-        incoming=True, from_users=(910006694)
-    )
-)
+@telebot.on(events.NewMessage(incoming=True, from_users=(910006694)))
 async def hehehe(event):
     if event.fwd_from:
         return
