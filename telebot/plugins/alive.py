@@ -12,11 +12,7 @@ from telebot.__init__ import StartTime
 from telebot.telebotConfig import Config, Var
 
 # ======CONSTANTS=========#
-CUSTOM_ALIVE = (
-    Var.CUSTOM_ALIVE
-    if Var.CUSTOM_ALIVE
-    else "Hey! I'm alive.!"
-)
+CUSTOM_ALIVE = Var.CUSTOM_ALIVE if Var.CUSTOM_ALIVE else "Hey! I'm alive.!"
 ALV_PIC = Var.ALIVE_PIC if Var.ALIVE_PIC else None
 telemoji = Var.CUSTOM_ALIVE_EMOJI if Var.CUSTOM_ALIVE_EMOJI else "**✵**"
 if Config.SUDO_USERS:

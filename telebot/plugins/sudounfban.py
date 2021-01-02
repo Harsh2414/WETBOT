@@ -1,7 +1,4 @@
-
 import asyncio
-
-from telebot import CMD_HELP
 
 # By @HeisenbergTheDanger, @its_xditya
 
@@ -10,7 +7,9 @@ from telebot import CMD_HELP
 async def _(event):
     if event.fwd_from:
         return
-    await event.edit("Starting a Mass-UNFedBan \n please don't send much messeges now to avoid floodwait...")
+    await event.edit(
+        "Starting a Mass-UNFedBan \n please don't send much messeges now to avoid floodwait..."
+    )
     fedList = []
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()

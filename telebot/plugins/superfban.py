@@ -18,14 +18,16 @@ import asyncio
 
 from telebot import CMD_HELP
 
-# By @HeisenbergTheDanger, @its_xditya 
+# By @HeisenbergTheDanger, @its_xditya
 
 
 @telebot.on(admin_cmd("superfban?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
-    await event.edit("STARTED A MASS-FBAN.. \nPLEASE DO NOT SEND MUCH MESSEGES TO AVOID FLOODWAIT😎")
+    await event.edit(
+        "STARTED A MASS-FBAN.. \nPLEASE DO NOT SEND MUCH MESSEGES TO AVOID FLOODWAIT😎"
+    )
     fedList = []
     if event.reply_to_msg_id:
         previous_message = await event.get_reply_message()
@@ -157,9 +159,6 @@ async def _(event):
     await event.edit(
         f"SuperFBan Completed. Affected {len(fedList) - exCount} feds.\n#TB"
     )
-
-
-
 
 
 CMD_HELP.update(

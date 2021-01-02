@@ -1,10 +1,11 @@
 import asyncio
-from asyncio import wait
+
 from .. import CMD_HELP
 
 LOGGER_GROUP = Var.PRIVATE_GROUP_ID
 
 # ported by @its_xditya
+
 
 @telebot.on(admin_cmd(pattern="tspam"))
 @telebot.on(sudo_cmd(pattern="tspam", allow_sudo=True))
@@ -14,6 +15,7 @@ async def tmeme(e):
     for letter in message:
         await e.respond(letter)
     await e.delete()
+
 
 @telebot.on(admin_cmd(pattern="ispam"))
 @telebot.on(sudo_cmd(pattern="ispam", allow_sudo=True))
@@ -26,11 +28,10 @@ async def spammer(e):
         await e.delete()
         if LOGGER:
             await e.client.send_message(
-                LOGGER_GROUP,
-                "#SPAM \n\n"
-                "Spam was executed successfully"
-                )
-                               
+                LOGGER_GROUP, "#SPAM \n\n" "Spam was executed successfully"
+            )
+
+
 @telebot.on(admin_cmd(pattern="ibigspam"))
 @telebot.on(sudo_cmd(pattern="ibigspam", allow_sudo=True))
 async def bigspam(e):
@@ -43,12 +44,10 @@ async def bigspam(e):
         await e.delete()
         if LOGGER:
             await e.client.send_message(
-                LOGGER_GROUP,
-                "#BIGSPAM \n\n"
-                "Bigspam was executed successfully"
-                )
-        
-        
+                LOGGER_GROUP, "#BIGSPAM \n\n" "Bigspam was executed successfully"
+            )
+
+
 @telebot.on(admin_cmd(pattern="picspam"))
 @telebot.on(sudo_cmd(pattern="picspam", allow_sudo=True))
 async def tiny_pic_spam(e):
@@ -62,25 +61,26 @@ async def tiny_pic_spam(e):
         await e.delete()
         if LOGGER:
             await e.client.send_message(
-                LOGGER_GROUP,
-                "#PICSPAM \n\n"
-                "PicSpam was executed successfully"
-                )
+                LOGGER_GROUP, "#PICSPAM \n\n" "PicSpam was executed successfully"
+            )
+
+
 @telebot.on(admin_cmd(pattern="delayspam (.*)"))
 @telebot.on(sudo_cmd(pattern="delayspam (.*), allow_sudo=True"))
 async def spammer(e):
-    spamDelay = float(e.pattern_match.group(1).split(' ', 2)[0])
-    counter = int(e.pattern_match.group(1).split(' ', 2)[1])
-    spam_message = str(e.pattern_match.group(1).split(' ', 2)[2])
+    spamDelay = float(e.pattern_match.group(1).split(" ", 2)[0])
+    counter = int(e.pattern_match.group(1).split(" ", 2)[1])
+    spam_message = str(e.pattern_match.group(1).split(" ", 2)[2])
     await e.delete()
     for i in range(1, counter):
         await e.respond(spam_message)
         await sleep(spamDelay)
     if LOGGER:
         await e.client.send_message(
-            LOGGER_GROUP, "#DelaySPAM\n"
-            "DelaySpam was executed successfully")
-            
+            LOGGER_GROUP, "#DelaySPAM\n" "DelaySpam was executed successfully"
+        )
+
+
 CMD_HELP.update(
     {
         "spammer": ".tspam <sentence>\nUse - Text spam\
