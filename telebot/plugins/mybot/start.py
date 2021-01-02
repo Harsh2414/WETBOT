@@ -263,7 +263,7 @@ async def bot(event):
             try:
                 themssg = response.message.message
                 if themssg == "/cancel":
-                    await conv.send_message("Operation cancelled!!")
+                   return await conv.send_message("Operation cancelled!!")
                     return
             except BaseException:
                 pass
