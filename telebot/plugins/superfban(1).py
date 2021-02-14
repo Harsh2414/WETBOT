@@ -79,9 +79,9 @@ async def _(event):
             async with telebot.conversation("@MissRose_bot") as bot_conv:
                 await bot_conv.send_message("/start")
                 await bot_conv.send_message("/myfeds")
-                await asyncio.sleep(3)
+                await asyncio.sleep(6)
                 response = await bot_conv.get_response()
-                await asyncio.sleep(3)
+                await asyncio.sleep(6)
                 if "make a file" in response.text:
                     await asyncio.sleep(6)
                     await response.click(0)
@@ -145,9 +145,9 @@ async def _(event):
             exCount += 1
             continue
         await telebot.send_message(chat, f"/joinfed {fed}")
-        await asyncio.sleep(3)
+        await asyncio.sleep(6)
         await telebot.send_message(chat, f"/fban {FBAN} {REASON}")
-        await asyncio.sleep(3)
+        await asyncio.sleep(6)
     await event.edit(
         f"SuperFBan Completed. Affected {len(fedList) - exCount} feds.\n#TB"
     )
